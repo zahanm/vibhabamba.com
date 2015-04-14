@@ -10,8 +10,13 @@ a:link {
   text-decoration: none;
 }
 
+.page-width {
+  margin: auto;
+  width: 1080px;
+}
+
 .top-gap {
-  margin-top: 32px;
+  margin-top: 50px;
 }
 
 .left-gap {
@@ -22,10 +27,16 @@ a:link {
   margin-bottom: 25px;
 }
 
+.root {
+  .page-width;
+}
+
 .hero {
   margin: auto;
   width: 60%;
   text-align: center;
+
+  .top-gap;
 
   .headline {
     font-size: 21px;
@@ -33,21 +44,56 @@ a:link {
 
   .lead-para {
     font-size: 16px;
-    .top-gap;
+    margin-top: 30px;
   }
 }
 
 .tiles {
   .top-gap;
+
   .cell {
-    .left-gap;
     display: inline-block;
     vertical-align: top;
+
+    .left-gap;
+
+    &:hover {
+      cursor: pointer;
+    }
+
     .caption {
       margin-top: 16px;
       text-align: center;
     }
+
     .bottom-cushion;
+  }
+}
+
+.focus {
+  .page-width;
+
+  .backout {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 26px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .meat {
+    width: 360px;
+    margin: auto;
+
+    .top-gap;
+  }
+
+  .para {
+    width: 360px;
+    margin: auto;
   }
 }
 
@@ -55,4 +101,11 @@ a:link {
   background-color: #8a183d;
   height: 250px;
   width: 250px;
+}
+
+.fake-video {
+  background-color: #8a183d;
+  height: 500px;
+  width: 360px;
+  display: inline-block;
 }

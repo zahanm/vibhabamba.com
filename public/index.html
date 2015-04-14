@@ -1,40 +1,67 @@
 <!doctype html>
 <html>
 <head>
-  <!-- for dev only -->
-  <script>
-    less = {
-      env: "development"
-    };
-  </script>
-  <script src="js/less.js"></script>
-  <!-- / -->
   <link rel="stylesheet" type="text/css" href="styles/index.css" />
   <title>I am not Bamba</title>
 </head>
 <body>
-  <article class="hero">
-    <section class="headline">
-      I am Bamba
+  <article class="root">
+    <section class="hero">
+      <section class="headline">
+        Vibha Bamba
+      </section>
+      <section class="lead-para">
+        And who are you?
+        This is my <a href="/">resume</a>
+      </section>
     </section>
-    <section class="lead-para">
-      And who are you?
-      This is my <a href="/">resume</a>
+    <section class="tiles">
+      <section class="cell">
+        <div class="fake-image"></div>
+        <div class="caption">
+          iOS something something
+        </div>
+      </section>
+      <section class="cell">
+        <div class="fake-image" style="height: 300px;"></div>
+        <div class="caption">
+          Android mumbo jumbo
+        </div>
+      </section>
+      <section class="cell">
+        <div class="fake-image" style="height: 275px;"></div>
+        <div class="caption">
+          Known and unknowns
+        </div>
+      </section>
+      <section class="cell">
+        <div class="fake-image" style="height: 200px;"></div>
+        <div class="caption">
+          Covercards
+        </div>
+      </section>
     </section>
   </article>
-  <article class="tiles">
-    <section class="cell">
-      <div class="fake-image"></div>
-      <div class="caption">
-        iOS something something
+  <article class="focus">
+    <div class="backout">&larr;</div>
+    <section class="hero">
+      <section class="headline">
+        iOS mumbo jumbo
+      </section>
+      <section class="lead-para">
+        A short writeup with <a href="/">link</a>
+      </section>
+    </section>
+    <section class="meat">
+      <div class="fake-video">
       </div>
     </section>
-    <section class="cell">
-      <div class="fake-image" style="height: 300px;"></div>
-      <div class="caption">
-        Android mumbo jumbo
-      </div>
+    <section class="para">
+      <p>More writing.</p>
+      <p>Lorem ipsum.</p>
+      <p>Whatever.</p>
     </section>
   </article>
+  <script src="js/index.js"></script>
 </body>
 </html>
