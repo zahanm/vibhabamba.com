@@ -2,11 +2,39 @@
 <html>
 <head>
   <!-- for dev only -->
+  <script>
+    less = {
+      env: "development"
+    };
+  </script>
   <script src="js/less.js"></script>
   <!-- / -->
-  <title>I am Bamba</title>
+  <link rel="stylesheet" type="text/css" href="styles/index.css" />
+  <title>I am not Bamba</title>
 </head>
 <body>
-  So you know
+  <article class="hero">
+    <section class="headline">
+      I am Bamba
+    </section>
+    <section class="lead-para">
+      And who are you?
+      This is my <a href="/">resume</a>
+    </section>
+  </article>
+  <article class="tiles">
+    <section class="cell">
+      <div class="fake-image"></div>
+      <div class="caption">
+        iOS something something
+      </div>
+    </section>
+    <section class="cell">
+      <div class="fake-image" style="height: 300px;"></div>
+      <div class="caption">
+        Android mumbo jumbo
+      </div>
+    </section>
+  </article>
 </body>
 </html>

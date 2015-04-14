@@ -1,0 +1,12 @@
+body {
+  font-family: 'Helvetica Neue';
+}
+.hero {
+  margin: auto;
+}
+.hero .headline {
+  font-size: 21px;
+}
+.hero .lead-para {
+  font-size: 16px;
+}

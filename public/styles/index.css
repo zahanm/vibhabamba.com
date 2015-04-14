@@ -1,0 +1,9 @@
+body{font-family:'Helvetica Neue';}
+a:link{color:#27aae1;text-decoration:none;}
+.top-gap{margin-top:32px;}
+.left-gap{margin-left:10px;}
+.bottom-cushion{margin-bottom:25px;}
+.hero{margin:auto;width:60%;text-align:center;}.hero .headline{font-size:21px;}
+.hero .lead-para{font-size:16px;margin-top:32px;}
+.tiles{margin-top:32px;}.tiles .cell{margin-left:10px;display:inline-block;vertical-align:top;margin-bottom:25px;}.tiles .cell .caption{margin-top:16px;text-align:center;}
+.fake-image{background-color:#8a183d;height:250px;width:250px;}

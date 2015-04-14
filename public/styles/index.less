@@ -1,0 +1,58 @@
+
+@link-color: #27aae1;
+
+body {
+  font-family: 'Helvetica Neue';
+}
+
+a:link {
+  color: @link-color;
+  text-decoration: none;
+}
+
+.top-gap {
+  margin-top: 32px;
+}
+
+.left-gap {
+  margin-left: 10px;
+}
+
+.bottom-cushion {
+  margin-bottom: 25px;
+}
+
+.hero {
+  margin: auto;
+  width: 60%;
+  text-align: center;
+
+  .headline {
+    font-size: 21px;
+  }
+
+  .lead-para {
+    font-size: 16px;
+    .top-gap;
+  }
+}
+
+.tiles {
+  .top-gap;
+  .cell {
+    .left-gap;
+    display: inline-block;
+    vertical-align: top;
+    .caption {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .bottom-cushion;
+  }
+}
+
+.fake-image {
+  background-color: #8a183d;
+  height: 250px;
+  width: 250px;
+}
