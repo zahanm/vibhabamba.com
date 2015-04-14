@@ -1,12 +1,86 @@
 body {
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', san-serif;
+}
+a:link {
+  color: #27aae1;
+  text-decoration: none;
+}
+.page-width {
+  margin: auto;
+  width: 1080px;
+}
+.top-gap {
+  margin-top: 50px;
+}
+.left-gap {
+  margin-left: 10px;
+}
+.bottom-cushion {
+  margin-bottom: 25px;
+}
+.root {
+  margin: auto;
+  width: 1080px;
 }
 .hero {
   margin: auto;
+  width: 60%;
+  text-align: center;
+  margin-top: 50px;
 }
 .hero .headline {
   font-size: 21px;
 }
 .hero .lead-para {
   font-size: 16px;
+  margin-top: 30px;
+}
+.tiles {
+  margin-top: 50px;
+}
+.tiles .cell {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+  margin-bottom: 25px;
+}
+.tiles .cell:hover {
+  cursor: pointer;
+}
+.tiles .cell .caption {
+  margin-top: 16px;
+  text-align: center;
+}
+.focus {
+  margin: auto;
+  width: 1080px;
+}
+.focus .backout {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 26px;
+}
+.focus .backout:hover {
+  cursor: pointer;
+}
+.focus .meat {
+  width: 360px;
+  margin: auto;
+  margin-top: 50px;
+}
+.focus .para {
+  width: 360px;
+  margin: auto;
+}
+.fake-image {
+  background-color: #8a183d;
+  height: 250px;
+  width: 250px;
+}
+.fake-video {
+  background-color: #8a183d;
+  height: 500px;
+  width: 360px;
+  display: inline-block;
 }
