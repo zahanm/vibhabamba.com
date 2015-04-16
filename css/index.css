@@ -12,9 +12,6 @@ a:link {
 .top-gap {
   margin-top: 50px;
 }
-.left-gap {
-  margin-left: 10px;
-}
 .bottom-cushion {
   margin-bottom: 25px;
 }
@@ -41,11 +38,14 @@ a:link {
 .tiles .cell {
   display: inline-block;
   vertical-align: top;
-  margin-left: 10px;
+  width: 24.5%;
   margin-bottom: 25px;
 }
 .tiles .cell:hover {
   cursor: pointer;
+}
+.tiles .cell .img {
+  margin: auto;
 }
 .tiles .cell .caption {
   margin-top: 16px;
