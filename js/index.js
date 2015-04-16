@@ -22,7 +22,7 @@ function startup() {
 }
 
 function reLayout() {
-  var root = document.querySelector('.root');
+  var root = document.querySelector('.page');
   var focii = document.querySelectorAll('.focus');
 
   var to_hide = [];

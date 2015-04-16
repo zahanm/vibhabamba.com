@@ -6,6 +6,7 @@ a:link {
   text-decoration: none;
 }
 .page-width {
+  margin: auto;
   width: 270px;
 }
 @media (min-width: 540px) and (max-width: 1080px) {
@@ -94,6 +95,7 @@ a:link {
   text-align: center;
 }
 .focus {
+  margin: auto;
   width: 270px;
 }
 @media (min-width: 540px) and (max-width: 1080px) {
