@@ -1,5 +1,9 @@
 
 @link-color: #27aae1;
+@desktop-width: 1080px;
+@tablet-width: 540px;
+@fudge-factor: 4px;
+@tile-width: @desktop-width / 4 - @fudge-factor;
 
 body {
   font-family: 'Helvetica Neue', san-serif;
@@ -11,8 +15,28 @@ a:link {
 }
 
 .page-width {
-  margin: auto;
-  width: 1080px;
+  // for handheld devices
+  width: @tile-width + @fudge-factor;
+
+  @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+    // for tablets
+    width: @tablet-width;
+  }
+
+  @media (min-width: @desktop-width) {
+    // for desktop
+    width: @desktop-width;
+  }
+}
+
+.hero-width {
+  width: 100%;
+  @media (min-width: @tablet-width) and (max-width: @desktop-width) {
+    width: 80%;
+  }
+  @media (min-width: @desktop-width) {
+    width: 60%;
+  }
 }
 
 .top-gap {
@@ -23,14 +47,17 @@ a:link {
   margin-bottom: 25px;
 }
 
-.root {
+.page {
+  margin: auto;
+
   .page-width;
 }
 
 .hero {
   margin: auto;
-  width: 60%;
   text-align: center;
+
+  .hero-width;
 
   .top-gap;
 
@@ -50,7 +77,7 @@ a:link {
   .cell {
     display: inline-block;
     vertical-align: top;
-    width: 24.5%;
+    width: @tile-width;
 
     &:hover {
       cursor: pointer;
