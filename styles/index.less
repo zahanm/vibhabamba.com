@@ -1,8 +1,8 @@
 // out: ../css/index.css
 
 @link-color: #27aae1;
-@tablet-width: 810px;
-@mobile-width: 540px;
+@tablet-width: 940px;
+@mobile-width: 600px;
 @fudge-factor: 4px;
 @tile-width: @mobile-width / 2;
 
@@ -50,12 +50,13 @@ a:link {
   align-items: flex-start;
 
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .tile {
   width: @tile-width;
   padding: @fudge-factor;
+  margin-bottom: 20px;
 
   img {
     // image takes width of its parent
@@ -72,10 +73,20 @@ a:link {
 
 // tablet
 @media all and (max-width: @tablet-width) {
+
+  .lead-para {
+    width: 60%;
+  }
+
 }
 
 // mobile
 @media all and (max-width: @mobile-width) {
+
+  .lead-para {
+    width: 80%;
+  }
+
 }
 
 // #focus layout

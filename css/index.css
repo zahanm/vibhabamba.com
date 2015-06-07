@@ -32,11 +32,12 @@ a:link {
   justify-content: center;
   align-items: flex-start;
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .tile {
-  width: 270px;
+  width: 300px;
   padding: 4px;
+  margin-bottom: 20px;
 }
 .tile img {
   width: 100%;
@@ -44,6 +45,16 @@ a:link {
 .tile .caption {
   margin-top: 10px;
   text-align: center;
+}
+@media all and (max-width: 940px) {
+  .lead-para {
+    width: 60%;
+  }
+}
+@media all and (max-width: 600px) {
+  .lead-para {
+    width: 80%;
+  }
 }
 .focus {
   display: flex;
