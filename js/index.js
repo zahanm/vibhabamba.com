@@ -1,3 +1,4 @@
+/* @flow */
 
 document.addEventListener('DOMContentLoaded', startup);
 
@@ -29,9 +30,9 @@ function reLayout() {
   var to_show = [];
   if (document.location.hash === '#focus') {
     to_hide.push(root);
-    to_show.push.apply(to_show, focii);
+    to_show.push.apply(to_show, Array.prototype.slice.call(focii));
   } else {
-    to_hide.push.apply(to_hide, focii);
+    to_hide.push.apply(to_hide, Array.prototype.slice.call(focii));
     to_show.push(root);
   }
   to_hide.forEach(function(el) {
