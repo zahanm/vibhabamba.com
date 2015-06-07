@@ -5,107 +5,37 @@ a:link {
   color: #27aae1;
   text-decoration: none;
 }
-.page-width {
-  margin: auto;
-  width: 270px;
-}
-@media (min-width: 540px) and (max-width: 1080px) {
-  .page-width {
-    width: 540px;
-  }
-}
-@media (min-width: 1080px) {
-  .page-width {
-    width: 1080px;
-  }
-}
-.hero-width {
-  width: 100%;
-}
-@media (min-width: 540px) and (max-width: 1080px) {
-  .hero-width {
-    width: 80%;
-  }
-}
-@media (min-width: 1080px) {
-  .hero-width {
-    width: 60%;
-  }
-}
-.top-gap {
-  margin-top: 50px;
-}
-.bottom-cushion {
-  margin-bottom: 25px;
-}
 .page {
-  margin: auto;
-  width: 270px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
-@media (min-width: 540px) and (max-width: 1080px) {
-  .page {
-    width: 540px;
-  }
-}
-@media (min-width: 1080px) {
-  .page {
-    width: 1080px;
-  }
-}
-.hero {
-  margin: auto;
-  text-align: center;
-  width: 100%;
-  margin-top: 50px;
-}
-@media (min-width: 540px) and (max-width: 1080px) {
-  .hero {
-    width: 80%;
-  }
-}
-@media (min-width: 1080px) {
-  .hero {
-    width: 60%;
-  }
-}
-.hero .headline {
+.headline {
+  margin-top: 25px;
   font-size: 21px;
 }
-.tiles {
-  margin-top: 50px;
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
-.tiles .cell {
-  display: inline-block;
-  vertical-align: top;
-  width: 266px;
-  margin-bottom: 25px;
+.tile {
+  width: 270px;
+  padding: 4px;
 }
-.tiles .cell:hover {
-  cursor: pointer;
-}
-.tiles .cell .caption {
-  margin-top: 16px;
-  text-align: center;
-}
-.img {
-  margin: auto;
-}
-.img img {
+.tile img {
   width: 100%;
 }
 .focus {
-  margin: auto;
-  width: 270px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
-@media (min-width: 540px) and (max-width: 1080px) {
-  .focus {
-    width: 540px;
-  }
-}
-@media (min-width: 1080px) {
-  .focus {
-    width: 1080px;
-  }
+.focus img,
+.focus video {
+  max-height: 500px;
+  width: auto;
 }
 .focus .backout {
   position: absolute;
@@ -115,24 +45,4 @@ a:link {
 }
 .focus .backout:hover {
   cursor: pointer;
-}
-.focus .meat {
-  width: 360px;
-  margin: auto;
-  margin-top: 50px;
-}
-.focus .para {
-  width: 360px;
-  margin: auto;
-}
-.fake-image {
-  background-color: #8a183d;
-  height: 250px;
-  width: 250px;
-}
-.fake-video {
-  background-color: #8a183d;
-  height: 500px;
-  width: 360px;
-  display: inline-block;
 }

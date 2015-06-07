@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', startup);
 function startup() {
   reLayout();
 
-  var cells = document.querySelectorAll('.tiles .cell');
-  Array.prototype.forEach.call(cells, function(cell) {
-    cell.addEventListener('click', function() {
+  var tiles = document.querySelectorAll('.gallery .tile');
+  Array.prototype.forEach.call(tiles, function(tile) {
+    tile.addEventListener('click', function() {
       document.location.hash = '#focus';
       reLayout();
     });
@@ -38,6 +38,6 @@ function reLayout() {
     el.style.display = 'none';
   });
   to_show.forEach(function(el) {
-    el.style.display = 'block';
+    el.style.display = '';
   });
 }
