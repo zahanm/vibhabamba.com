@@ -15,7 +15,7 @@ a:link {
   text-decoration: none;
 }
 
-// home page layout
+// #page layout
 
 .page {
   display: flex;
@@ -33,9 +33,16 @@ a:link {
   text-transform: uppercase;
 }
 
-.lead-para {
-  margin-top: 30px;
+.para {
   width: 40%;
+}
+
+.lead-margin {
+  margin-top: 30px;
+}
+
+.lead {
+  .lead-margin;
 
   font-weight: bold;
   font-size: 62px;
@@ -69,12 +76,39 @@ a:link {
   }
 }
 
+// #focus layout
+.focus {
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  img, video {
+    max-height: 500px;
+    width: auto;
+
+    .lead-margin;
+  }
+
+  .backout {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 26px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}
+
 // desktop is default
 
 // tablet
 @media all and (max-width: @tablet-width) {
 
-  .lead-para {
+  .para {
     width: 70%;
   }
 
@@ -87,34 +121,12 @@ a:link {
     flex-flow: column;
   }
 
-  .lead-para {
-    width: 80%;
+  .lead {
     line-height: 64px;
   }
 
-}
-
-// #focus layout
-.focus {
-
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-
-  img, video {
-    max-height: 500px;
-    width: auto;
-  }
-
-  .backout {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 26px;
-
-    &:hover {
-      cursor: pointer;
-    }
+  .para {
+    width: 80%;
   }
 
 }

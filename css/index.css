@@ -23,9 +23,14 @@ a:link {
   letter-spacing: 0.7em;
   text-transform: uppercase;
 }
-.lead-para {
-  margin-top: 30px;
+.para {
   width: 40%;
+}
+.lead-margin {
+  margin-top: 30px;
+}
+.lead {
+  margin-top: 30px;
   font-weight: bold;
   font-size: 62px;
   line-height: 72px;
@@ -58,21 +63,6 @@ a:link {
   margin-top: 10px;
   text-align: center;
 }
-@media all and (max-width: 940px) {
-  .lead-para {
-    width: 70%;
-  }
-}
-@media all and (max-width: 450px) {
-  .gallery {
-    -webkit-flex-flow: column;
-            flex-flow: column;
-  }
-  .lead-para {
-    width: 80%;
-    line-height: 64px;
-  }
-}
 .focus {
   display: -webkit-box;
   display: -webkit-flex;
@@ -87,13 +77,31 @@ a:link {
 .focus video {
   max-height: 500px;
   width: auto;
+  margin-top: 30px;
 }
 .focus .backout {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   font-size: 26px;
 }
 .focus .backout:hover {
   cursor: pointer;
+}
+@media all and (max-width: 940px) {
+  .para {
+    width: 70%;
+  }
+}
+@media all and (max-width: 450px) {
+  .gallery {
+    -webkit-flex-flow: column;
+            flex-flow: column;
+  }
+  .lead {
+    line-height: 64px;
+  }
+  .para {
+    width: 80%;
+  }
 }
