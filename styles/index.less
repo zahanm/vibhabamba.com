@@ -83,6 +83,9 @@ a:link {
   flex-flow: column;
   align-items: center;
 
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
   img, video {
     max-height: 500px;
     width: auto;
@@ -101,6 +104,10 @@ a:link {
     }
   }
 
+}
+
+:target {
+  opacity: 1;
 }
 
 // desktop is default

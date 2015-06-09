@@ -5,19 +5,12 @@ document.addEventListener('DOMContentLoaded', startup);
 function startup() {
   reLayout();
 
-  var tiles = document.querySelectorAll('.gallery .tile');
-  Array.prototype.forEach.call(tiles, function(tile) {
-    tile.addEventListener('click', function() {
-      document.location.hash = '#focus';
-      reLayout();
-    });
-  });
+  window.addEventListener("hashchange", reLayout);
 
   var closes = document.querySelectorAll('.focus .backout');
   Array.prototype.forEach.call(closes, function(x) {
     x.addEventListener('click', function() {
       document.location.hash = '';
-      reLayout();
     });
   });
 }
@@ -28,7 +21,7 @@ function reLayout() {
 
   var to_hide = [];
   var to_show = [];
-  if (document.location.hash === '#focus') {
+  if (document.location.hash === '#ios') {
     to_hide.push(root);
     to_show.push.apply(to_show, Array.prototype.slice.call(focii));
   } else {

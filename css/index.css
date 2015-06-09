@@ -72,6 +72,9 @@ a:link {
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+          transition: opacity 1s ease-in-out;
 }
 .focus img,
 .focus video {
@@ -87,6 +90,9 @@ a:link {
 }
 .focus .backout:hover {
   cursor: pointer;
+}
+:target {
+  opacity: 1;
 }
 @media all and (max-width: 940px) {
   .para {
