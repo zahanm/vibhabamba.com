@@ -29,9 +29,16 @@ function reLayout() {
     to_show.push(root);
   }
   to_hide.forEach(function(el) {
+    el.classList.remove('shown');
     el.style.display = 'none';
   });
   to_show.forEach(function(el) {
     el.style.display = '';
   });
+  // deferred execution because CSS can't animate a "display" change
+  setTimeout(function() {
+    to_show.forEach(function(el) {
+      el.classList.add('shown');
+    });
+  }, 10);
 }

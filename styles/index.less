@@ -15,6 +15,15 @@ a:link {
   text-decoration: none;
 }
 
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  &.shown {
+    opacity: 1;
+  }
+}
+
 // #page layout
 
 .page {
@@ -83,8 +92,7 @@ a:link {
   flex-flow: column;
   align-items: center;
 
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  .fade-in;
 
   img, video {
     max-height: 500px;
@@ -104,10 +112,6 @@ a:link {
     }
   }
 
-}
-
-:target {
-  opacity: 1;
 }
 
 // desktop is default
