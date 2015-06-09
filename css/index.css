@@ -35,7 +35,7 @@ a:link {
   margin-bottom: 40px;
 }
 .tile {
-  width: 300px;
+  width: 225px;
   padding: 4px;
   margin-bottom: 20px;
 }
@@ -51,7 +51,10 @@ a:link {
     width: 60%;
   }
 }
-@media all and (max-width: 600px) {
+@media all and (max-width: 450px) {
+  .gallery {
+    flex-flow: column;
+  }
   .lead-para {
     width: 80%;
   }
