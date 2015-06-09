@@ -22,11 +22,18 @@ module.exports = function(grunt) {
           spawn: false
         }
       }
+    },
+    connect: {
+      server: {},
+      options: {
+        keepalive: true
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('default', ['less']);
 
