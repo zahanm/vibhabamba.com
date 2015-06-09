@@ -35,7 +35,7 @@ a:link {
   margin-bottom: 40px;
 }
 .tile {
-  width: 225px;
+  width: 300px;
   padding: 4px;
   margin-bottom: 20px;
 }
@@ -57,6 +57,7 @@ a:link {
   }
   .lead-para {
     width: 80%;
+    line-height: 64px;
   }
 }
 .focus {
