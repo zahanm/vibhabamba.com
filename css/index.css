@@ -63,16 +63,6 @@ a:link {
   margin-top: 10px;
   text-align: center;
 }
-.focus {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-}
 .focus img,
 .focus video {
   max-height: 500px;
