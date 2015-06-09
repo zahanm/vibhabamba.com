@@ -48,7 +48,7 @@ a:link {
 }
 @media all and (max-width: 940px) {
   .lead-para {
-    width: 60%;
+    width: 70%;
   }
 }
 @media all and (max-width: 450px) {
