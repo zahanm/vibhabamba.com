@@ -1,0 +1,28 @@
+{
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-less": "^1.0.1",
+    "less-plugin-autoprefix": "^1.4.2"
+  },
+  "name": "vibhabamba.com",
+  "description": "Nothing much going on here",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zahanm/vibhabamba.com.git"
+  },
+  "author": "Zahan Malkani z@zahanm.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zahanm/vibhabamba.com/issues"
+  },
+  "homepage": "https://github.com/zahanm/vibhabamba.com#readme"
+}
