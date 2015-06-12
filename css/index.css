@@ -23,14 +23,14 @@ a:link {
   letter-spacing: 0.7em;
   text-transform: uppercase;
 }
-.para {
-  width: 40%;
-}
 .lead-margin {
   margin-top: 30px;
 }
-.lead {
+.para {
+  width: 60%;
   margin-top: 30px;
+}
+.lead {
   font-weight: bold;
   font-size: 62px;
   line-height: 72px;
@@ -68,6 +68,7 @@ a:link {
   max-height: 500px;
   max-width: 100%;
   margin-top: 30px;
+  border: 1px solid #ccc;
 }
 .focus .backout {
   position: fixed;
