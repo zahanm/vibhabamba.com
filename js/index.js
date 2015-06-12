@@ -11,8 +11,7 @@ function reLayout() {
   var root = document.querySelector('#home');
   var pages = document.querySelectorAll('.page');
 
-  // currently selected element from document.location.hash
-  var to_show = document.querySelector(':target');
+  var to_show = document.getElementById(document.location.hash.substring(1));
   if (to_show === null) {
     to_show = root;
   }
