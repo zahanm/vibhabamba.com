@@ -74,10 +74,11 @@ a {
   -webkit-align-items: center;
           align-items: center;
   list-style: none;
+  padding: 0;
   margin-bottom: 40px;
 }
 .contact li {
-  padding: 0 15px;
+  padding: 15px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: inline-flex;
@@ -133,5 +134,9 @@ a {
   }
   .para {
     width: 80%;
+  }
+  .contact {
+    -webkit-flex-flow: column;
+            flex-flow: column;
   }
 }
