@@ -87,14 +87,24 @@ a {
 
   li {
     padding: 0 15px;
-  }
 
-  img {
-    width: 25px;
-  }
+    // lol, this needs a flexbox too to center the text and icon
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 
-  a {
-    color: @bold-color;
+    * {
+      padding: 0 3px;
+    }
+
+    img {
+      height: 25px;
+    }
+
+    a {
+      color: @bold-color;
+    }
   }
 }
 

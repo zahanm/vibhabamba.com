@@ -78,11 +78,25 @@ a {
 }
 .contact li {
   padding: 0 15px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
 }
-.contact img {
-  width: 25px;
+.contact li * {
+  padding: 0 3px;
 }
-.contact a {
+.contact li img {
+  height: 25px;
+}
+.contact li a {
   color: black;
 }
 .focus img,
