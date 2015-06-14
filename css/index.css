@@ -61,10 +61,6 @@ a {
 .tile img {
   width: 100%;
 }
-.tile .caption {
-  margin-top: 10px;
-  text-align: center;
-}
 .contact {
   display: -webkit-box;
   display: -webkit-flex;
