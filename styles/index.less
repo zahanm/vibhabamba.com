@@ -5,12 +5,13 @@
 @mobile-width: 450px;
 @fudge-factor: 4px;
 @tile-width: 300px;
+@text-color: black;
 
 body {
   font-family: 'Helvetica Neue', san-serif;
 }
 
-a:link {
+a {
   color: @link-color;
   text-decoration: none;
 }
@@ -57,6 +58,10 @@ a:link {
 
   margin-top: 60px;
   margin-bottom: 40px;
+
+  a {
+    color: @text-color;
+  }
 }
 
 .tile {
@@ -89,6 +94,8 @@ a:link {
     top: 10px;
     left: 10px;
     font-size: 26px;
+
+    color: @text-color;
 
     &:hover {
       cursor: pointer;

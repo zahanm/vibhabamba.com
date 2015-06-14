@@ -1,7 +1,7 @@
 body {
   font-family: 'Helvetica Neue', san-serif;
 }
-a:link {
+a {
   color: #27aae1;
   text-decoration: none;
 }
@@ -51,6 +51,9 @@ a:link {
   margin-top: 60px;
   margin-bottom: 40px;
 }
+.gallery a {
+  color: black;
+}
 .tile {
   width: 300px;
   padding: 4px;
@@ -74,6 +77,7 @@ a:link {
   top: 10px;
   left: 10px;
   font-size: 26px;
+  color: black;
 }
 .focus .backout:hover {
   cursor: pointer;
