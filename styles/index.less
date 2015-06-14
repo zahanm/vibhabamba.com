@@ -5,10 +5,11 @@
 @mobile-width: 450px;
 @fudge-factor: 4px;
 @tile-width: 300px;
-@text-color: black;
+@bold-color: black;
+@softer-color: lighten(@bold-color, 40%);
 
 body {
-  font-family: 'Helvetica Neue', san-serif;
+  font-family: 'Georgia', serif;
 }
 
 a {
@@ -25,9 +26,8 @@ a {
 }
 
 .headline {
-  margin-top: 80px;
+  margin-top: 60px;
 
-  font-family: 'Georgia', serif;
   color: grey;
   font-size: 14px;
   letter-spacing: 0.7em;
@@ -44,6 +44,7 @@ a {
 }
 
 .lead {
+  font-family: 'Helvetica Neue', sans-serif;
   font-weight: bold;
   font-size: 62px;
   line-height: 72px;
@@ -60,7 +61,7 @@ a {
   margin-bottom: 40px;
 
   a {
-    color: @text-color;
+    color: @bold-color;
   }
 }
 
@@ -80,6 +81,12 @@ a {
   }
 }
 
+.details {
+  font-size: 18px;
+  line-height: 28px;
+  color: @softer-color;
+}
+
 // #foo focus layout
 .focus {
 
@@ -93,9 +100,10 @@ a {
     position: fixed;
     top: 10px;
     left: 10px;
+    font-family: sans-serif;
     font-size: 26px;
 
-    color: @text-color;
+    color: @bold-color;
 
     &:hover {
       cursor: pointer;

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Helvetica Neue', san-serif;
+  font-family: 'Georgia', serif;
 }
 a {
   color: #27aae1;
@@ -16,8 +16,7 @@ a {
           align-items: center;
 }
 .headline {
-  margin-top: 80px;
-  font-family: 'Georgia', serif;
+  margin-top: 60px;
   color: grey;
   font-size: 14px;
   letter-spacing: 0.7em;
@@ -31,6 +30,7 @@ a {
   margin-top: 30px;
 }
 .lead {
+  font-family: 'Helvetica Neue', sans-serif;
   font-weight: bold;
   font-size: 62px;
   line-height: 72px;
@@ -66,6 +66,11 @@ a {
   margin-top: 10px;
   text-align: center;
 }
+.details {
+  font-size: 18px;
+  line-height: 28px;
+  color: #666666;
+}
 .focus img,
 .focus video {
   max-height: 500px;
@@ -76,6 +81,7 @@ a {
   position: fixed;
   top: 10px;
   left: 10px;
+  font-family: sans-serif;
   font-size: 26px;
   color: black;
 }
