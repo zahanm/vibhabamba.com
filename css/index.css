@@ -68,7 +68,6 @@ a:link {
   max-height: 500px;
   max-width: 100%;
   margin-top: 30px;
-  border: 1px solid #ccc;
 }
 .focus .backout {
   position: fixed;
