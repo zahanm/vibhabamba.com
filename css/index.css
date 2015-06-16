@@ -15,9 +15,6 @@ a {
   -webkit-align-items: center;
           align-items: center;
 }
-#home {
-  margin-top: 60px;
-}
 .headline {
   margin-top: 55px;
   margin-bottom: 8px;
@@ -30,6 +27,15 @@ a {
 }
 .para {
   width: 60%;
+}
+#home {
+  margin-top: 60px;
+}
+#home .headline {
+  color: grey;
+  font-size: 14px;
+  letter-spacing: 0.6em;
+  border-bottom: none;
 }
 .lead {
   font-family: 'Helvetica Neue', sans-serif;
