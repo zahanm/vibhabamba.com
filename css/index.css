@@ -105,10 +105,10 @@ a {
 }
 .contact li img {
   height: 18px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .contact li a {
-  color: #777;
+  color: #666;
 }
 .focus img,
 .focus video {
