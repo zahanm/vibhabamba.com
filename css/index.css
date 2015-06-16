@@ -117,9 +117,9 @@ a {
   cursor: pointer;
 }
 .details {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 28px;
-  color: #666666;
+  color: #555;
 }
 @media all and (max-width: 940px) {
   .para {
