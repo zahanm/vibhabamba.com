@@ -107,9 +107,8 @@ a {
   margin-top: 30px;
 }
 .backout {
-  font-family: sans-serif;
-  font-size: 32px;
-  color: black;
+  margin-top: 25px;
+  margin-bottom: 30px;
 }
 .backout:hover {
   cursor: pointer;
