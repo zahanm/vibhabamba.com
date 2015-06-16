@@ -121,6 +121,15 @@ a {
   line-height: 28px;
   color: #555;
 }
+.tags {
+  margin-bottom: 80px;
+  margin-top: 3px;
+  color: #777;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 26px;
+}
 @media all and (max-width: 940px) {
   .para {
     width: 70%;
