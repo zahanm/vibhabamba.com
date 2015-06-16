@@ -101,13 +101,14 @@ a {
           align-items: center;
 }
 .contact li * {
-  padding: 0 3px;
+  padding: 0 2px;
 }
 .contact li img {
-  height: 25px;
+  height: 18px;
+  opacity: 0.8;
 }
 .contact li a {
-  color: black;
+  color: #777;
 }
 .focus img,
 .focus video {
