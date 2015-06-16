@@ -19,10 +19,11 @@ a {
   margin-top: 60px;
 }
 .headline {
-  margin-top: 50px;
-  color: grey;
-  font-size: 14px;
-  letter-spacing: 0.7em;
+  margin-top: 55px;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 18px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 .para {
