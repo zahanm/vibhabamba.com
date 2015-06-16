@@ -146,6 +146,9 @@ a {
     -webkit-flex-flow: column;
             flex-flow: column;
   }
+  .tile {
+    margin: 20px 0;
+  }
   .lead {
     line-height: 64px;
   }
