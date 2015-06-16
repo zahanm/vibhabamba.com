@@ -25,4 +25,5 @@ function reLayout() {
   });
   // show the active one
   to_show.style.display = '';
+  window.scroll(0, 0);
 }
