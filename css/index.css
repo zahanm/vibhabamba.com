@@ -137,6 +137,9 @@ a {
   letter-spacing: 1px;
   line-height: 26px;
 }
+.store-icon {
+  width: 160px;
+}
 @media all and (max-width: 940px) {
   .para {
     width: 70%;
