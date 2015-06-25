@@ -129,8 +129,8 @@ a {
   top: 0;
   -webkit-animation-name: galleryfade;
           animation-name: galleryfade;
-  -webkit-animation-duration: 20s;
-          animation-duration: 20s;
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
