@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', startup);
 
 function startup() {
   reLayout();
-  window.addEventListener("hashchange", reLayout);
+  window.addEventListener('hashchange', reLayout);
 }
 
 function reLayout() {
