@@ -134,6 +134,9 @@ a {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+.preload {
+  display: none;
+}
 @-webkit-keyframes galleryfade {
   0% {
     background-image: url("/images/ios-gallery/f1.png");
