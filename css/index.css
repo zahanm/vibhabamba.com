@@ -118,10 +118,10 @@ a {
 }
 .focus .gallery img,
 .focus .gallery video {
-  height: 100%;
-  width: 100%;
+  max-height: 500px;
+  max-width: 100%;
 }
-.focus .gallery::after {
+.focus .gallery.ios::after {
   content: '';
   background: url("/images/ios-gallery/f1.png") no-repeat;
   background-size: contain;
