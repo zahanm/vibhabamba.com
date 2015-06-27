@@ -127,6 +127,8 @@ a {
   height: 100%;
   position: absolute;
   top: 0;
+  left: 0;
+  background-size: contain;
   -webkit-animation-name: galleryfade;
           animation-name: galleryfade;
   -webkit-animation-duration: 14s;
