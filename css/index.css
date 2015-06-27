@@ -127,6 +127,9 @@ a {
   height: 100%;
   position: absolute;
   top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
   -webkit-animation-name: galleryfade;
           animation-name: galleryfade;
   -webkit-animation-duration: 14s;
@@ -138,7 +141,7 @@ a {
   display: none;
 }
 @-webkit-keyframes galleryfade {
-  0% {
+  from {
     background-image: url("/images/ios-gallery/f1.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -178,14 +181,14 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
   }
-  100% {
+  to {
     background-image: url("/images/ios-gallery/f1.png");
     background-repeat: no-repeat;
     background-size: contain;
   }
 }
 @keyframes galleryfade {
-  0% {
+  from {
     background-image: url("/images/ios-gallery/f1.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -225,7 +228,7 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
   }
-  100% {
+  to {
     background-image: url("/images/ios-gallery/f1.png");
     background-repeat: no-repeat;
     background-size: contain;
