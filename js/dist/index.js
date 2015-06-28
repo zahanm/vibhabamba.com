@@ -1,4 +1,5 @@
 /* @flow */
+'use strict';
 
 document.addEventListener('DOMContentLoaded', startup);
 
@@ -17,7 +18,7 @@ function reLayout() {
   }
 
   // hide all pages
-  Array.prototype.slice.call(pages).concat(root).map(function(page) {
+  Array.prototype.slice.call(pages).concat(root).map(function (page) {
     if (page === to_show) {
       return;
     }

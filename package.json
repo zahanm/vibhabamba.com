@@ -4,6 +4,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
     "gulp-connect": "^2.2.0",
     "gulp-less": "^3.0.3",
     "less-plugin-autoprefix": "^1.4.2"
