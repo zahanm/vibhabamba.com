@@ -44,11 +44,8 @@ a {
   font-size: 30px;
   line-height: 40px;
   font-family: 'Chronicle Display', 'Georgia', serif;
-  text-align:center;
-}
-
-.para {
-  width: 60%;
+  text-align: center;
+  .para;
 }
 
 #home {
@@ -248,11 +245,6 @@ a {
 
 // tablet
 @media all and (max-width: @tablet-width) {
-
-  .para {
-    width: 70%;
-  }
-
 }
 
 // mobile
@@ -270,12 +262,20 @@ a {
     line-height: 64px;
   }
 
-  .para {
-    width: 80%;
-  }
-
   .contact {
     flex-flow: column;
   }
 
+}
+
+.para {
+  width: 60%;
+
+  @media all and (max-width: @tablet-width) {
+    width: 70%;
+  }
+
+  @media all and (max-width: @mobile-width) {
+    width: 80%;
+  }
 }
