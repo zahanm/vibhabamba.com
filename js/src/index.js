@@ -3,14 +3,14 @@
 
 document.addEventListener('DOMContentLoaded', startup);
 
-function startup() {
+function startup(): void {
   reLayout();
   window.addEventListener('hashchange', reLayout);
 }
 
-function reLayout() {
-  var root = document.querySelector('#home');
-  var pages = document.querySelectorAll('.page');
+function reLayout(): void {
+  var root: HTMLElement = document.querySelector('#home');
+  var pages: NodeList<HTMLElement> = document.querySelectorAll('.page');
 
   var to_show = document.getElementById(document.location.hash.substring(1));
   if (to_show === null) {
