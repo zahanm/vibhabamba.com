@@ -33,9 +33,17 @@ a {
   line-height: 40px;
   font-family: 'Chronicle Display', 'Georgia', serif;
   text-align: center;
-}
-.para {
   width: 60%;
+}
+@media all and (max-width: 940px) {
+  .mission {
+    width: 70%;
+  }
+}
+@media all and (max-width: 450px) {
+  .mission {
+    width: 80%;
+  }
 }
 #home {
   margin-top: 60px;
@@ -265,11 +273,6 @@ a {
   width: 160px;
   margin-top: 30px;
 }
-@media all and (max-width: 940px) {
-  .para {
-    width: 70%;
-  }
-}
 @media all and (max-width: 450px) {
   .tile-board {
     -webkit-flex-flow: column;
@@ -281,11 +284,21 @@ a {
   .lead {
     line-height: 64px;
   }
-  .para {
-    width: 80%;
-  }
   .contact {
     -webkit-flex-flow: column;
             flex-flow: column;
+  }
+}
+.para {
+  width: 60%;
+}
+@media all and (max-width: 940px) {
+  .para {
+    width: 70%;
+  }
+}
+@media all and (max-width: 450px) {
+  .para {
+    width: 80%;
   }
 }
