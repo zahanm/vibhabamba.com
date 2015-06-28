@@ -16,17 +16,34 @@ a {
           align-items: center;
 }
 .headline {
-  margin-top: 55px;
+  margin-top: 60px;
   margin-bottom: 8px;
   padding-bottom: 3px;
   border-bottom: 1px solid #aaa;
   color: #333;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-.para {
+.mission {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 30px;
+  line-height: 40px;
+  font-family: 'Chronicle Display', 'Georgia', serif;
+  text-align: center;
   width: 60%;
+}
+@media all and (max-width: 940px) {
+  .mission {
+    width: 70%;
+  }
+}
+@media all and (max-width: 450px) {
+  .mission {
+    width: 80%;
+  }
 }
 #home {
   margin-top: 60px;
@@ -262,11 +279,6 @@ a {
   width: 160px;
   margin-top: 30px;
 }
-@media all and (max-width: 940px) {
-  .para {
-    width: 70%;
-  }
-}
 @media all and (max-width: 450px) {
   .tile-board {
     -webkit-flex-flow: column;
@@ -278,11 +290,21 @@ a {
   .lead {
     line-height: 64px;
   }
-  .para {
-    width: 80%;
-  }
   .contact {
     -webkit-flex-flow: column;
             flex-flow: column;
+  }
+}
+.para {
+  width: 60%;
+}
+@media all and (max-width: 940px) {
+  .para {
+    width: 70%;
+  }
+}
+@media all and (max-width: 450px) {
+  .para {
+    width: 80%;
   }
 }

@@ -26,19 +26,26 @@ a {
 }
 
 .headline {
-  margin-top: 55px;
+  margin-top: 60px;
   margin-bottom: 8px;
   padding-bottom: 3px;
   border-bottom: 1px solid #aaa;
 
   color: #333;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.para {
-  width: 60%;
+.mission {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 30px;
+  line-height: 40px;
+  font-family: 'Chronicle Display', 'Georgia', serif;
+  text-align: center;
+  .para;
 }
 
 #home {
@@ -246,11 +253,6 @@ a {
 
 // tablet
 @media all and (max-width: @tablet-width) {
-
-  .para {
-    width: 70%;
-  }
-
 }
 
 // mobile
@@ -268,12 +270,20 @@ a {
     line-height: 64px;
   }
 
-  .para {
-    width: 80%;
-  }
-
   .contact {
     flex-flow: column;
   }
 
+}
+
+.para {
+  width: 60%;
+
+  @media all and (max-width: @tablet-width) {
+    width: 70%;
+  }
+
+  @media all and (max-width: @mobile-width) {
+    width: 80%;
+  }
 }
