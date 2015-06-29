@@ -19,8 +19,9 @@ function reLayout(): void {
   var root: HTMLElement = document.querySelector('#home');
   var pages: NodeList<HTMLElement> = document.querySelectorAll('.page');
 
-  var to_show = document.getElementById(document.location.hash.substring(1));
-  if (to_show === null) {
+  var to_show: ?HTMLElement =
+    document.getElementById(document.location.hash.substring(1));
+  if (to_show == null) {
     to_show = root;
   }
 
