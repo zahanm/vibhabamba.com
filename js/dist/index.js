@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', startup);
 function startup() {
   reLayout();
   window.addEventListener('hashchange', reLayout);
-  var android = new Gallery('#android .gallery img');
-  android.start();
+  ['#ios .gallery img', '#android .gallery img'].map(function (s) {
+    var g = new Gallery(s);
+    g.start();
+  });
 }
 
 function reLayout() {

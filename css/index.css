@@ -138,22 +138,7 @@ a {
   max-height: 500px;
   max-width: 100%;
 }
-.focus .gallery.ios::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-repeat: no-repeat;
-  background-size: contain;
-  -webkit-animation-name: galleryfade;
-          animation-name: galleryfade;
-  -webkit-animation-duration: 14s;
-          animation-duration: 14s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
+#ios .gallery img,
 #android .gallery img {
   position: absolute;
   left: 0;
@@ -162,6 +147,7 @@ a {
   -webkit-transition: opacity 2s;
           transition: opacity 2s;
 }
+#ios .gallery img:first-child,
 #android .gallery img:first-child {
   position: relative;
   opacity: 1;
