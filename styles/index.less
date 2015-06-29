@@ -163,7 +163,13 @@ a {
 
 #android .gallery {
   img {
+    position: absolute;
+    left: 0;
+    top: 0;
     transition: opacity 2s;
+  }
+  img:first-child {
+    position: relative;
   }
 }
 

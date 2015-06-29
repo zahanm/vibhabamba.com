@@ -155,8 +155,14 @@ a {
           animation-iteration-count: infinite;
 }
 #android .gallery img {
+  position: absolute;
+  left: 0;
+  top: 0;
   -webkit-transition: opacity 2s;
           transition: opacity 2s;
+}
+#android .gallery img:first-child {
+  position: relative;
 }
 .preload {
   display: none;
