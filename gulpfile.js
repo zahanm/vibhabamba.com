@@ -4,6 +4,7 @@ var gulp = require('gulp'),
   connect = require('gulp-connect'),
   less = require('gulp-less'),
   babel = require('gulp-babel'),
+  gutil = require('gulp-util'),
   autoprefix = new (require('less-plugin-autoprefix'))();
 
 gulp.task('server', function () {
@@ -22,7 +23,10 @@ gulp.task('less', function () {
 
 gulp.task('babel', function () {
   return gulp.src('js/src/*.js')
-    .pipe(babel())
+    .pipe(babel().on('error', function (e) {
+      gutil.log('\n' + e.message + '\n' + e.codeFrame);
+      this.emit('end');
+    }))
     .pipe(gulp.dest('js/dist/'));
 });
 
