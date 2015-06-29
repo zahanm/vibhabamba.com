@@ -131,20 +131,17 @@ a {
 .focus .gallery {
   margin-top: 30px;
 
-  @desktop-page-height: 500px;
-  max-height: @desktop-page-height;
+  max-height: 500px;
   max-width: 80%;
 
-  position: relative;
-
   img, video {
-    max-height: @desktop-page-height;
     max-width: 100%; // equal to parent
   }
 }
 
 #ios, #android {
   .gallery {
+    position: relative;
     img {
       position: absolute;
       left: 0;

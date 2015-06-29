@@ -131,12 +131,14 @@ a {
   margin-top: 30px;
   max-height: 500px;
   max-width: 80%;
-  position: relative;
 }
 .focus .gallery img,
 .focus .gallery video {
-  max-height: 500px;
   max-width: 100%;
+}
+#ios .gallery,
+#android .gallery {
+  position: relative;
 }
 #ios .gallery img,
 #android .gallery img {
