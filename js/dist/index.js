@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', startup);
 function startup() {
   reLayout();
   window.addEventListener('hashchange', reLayout);
-  var g = new Gallery();
-  g.setupListener();
+  var android = new Gallery('#android .gallery img');
+  android.start();
 }
 
 function reLayout() {
@@ -36,26 +36,33 @@ function reLayout() {
 }
 
 var Gallery = (function () {
-  function Gallery() {
+  function Gallery(selector) {
     _classCallCheck(this, Gallery);
 
-    this.images = Array.prototype.slice.call(document.querySelectorAll('#android .gallery img'));
+    this.images = Array.prototype.slice.call(document.querySelectorAll(selector));
+    this.index = 0;
   }
 
   _createClass(Gallery, [{
-    key: 'setupListener',
-    value: function setupListener() {
+    key: 'start',
+    value: function start() {
       var _this = this;
 
-      this.images[0].addEventListener('click', function () {
-        _this.fade();
-      });
+      setInterval(function () {
+        _this.nextImage();
+      }, 5000); // in milli-seconds
     }
   }, {
-    key: 'fade',
-    value: function fade() {
-      this.images[0].style.opacity = '0';
-      this.images[1].style.opacity = '1';
+    key: 'nextImage',
+    value: function nextImage() {
+      this.images[this.index].style.opacity = '0';
+      this.images[this.nextIndex()].style.opacity = '1';
+      this.index = this.nextIndex();
+    }
+  }, {
+    key: 'nextIndex',
+    value: function nextIndex() {
+      return (this.index + 1) % this.images.length;
     }
   }]);
 

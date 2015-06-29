@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', startup);
 function startup(): void {
   reLayout();
   window.addEventListener('hashchange', reLayout);
-  var g = new Gallery();
-  g.setupListener();
+  var android = new Gallery('#android .gallery img');
+  android.start();
 }
 
 function reLayout(): void {
@@ -33,18 +33,24 @@ function reLayout(): void {
 
 class Gallery {
   images: Array<HTMLElement>;
-  constructor() {
+  index: number;
+  constructor(selector: string) {
     this.images = Array.prototype.slice.call(
-      document.querySelectorAll('#android .gallery img')
+      document.querySelectorAll(selector)
     );
+    this.index = 0;
   }
-  setupListener(): void {
-    this.images[0].addEventListener('click', () => {
-      this.fade();
-    });
+  start(): void {
+    setInterval(() => {
+      this.nextImage();
+    }, 5000); // in milli-seconds
   }
-  fade(): void {
-    this.images[0].style.opacity = '0';
-    this.images[1].style.opacity = '1';
+  nextImage(): void {
+    this.images[this.index].style.opacity = '0';
+    this.images[this.nextIndex()].style.opacity = '1';
+    this.index = this.nextIndex();
+  }
+  nextIndex(): number {
+    return ( this.index + 1 ) % this.images.length;
   }
 }
