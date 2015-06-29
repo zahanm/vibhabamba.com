@@ -134,6 +134,7 @@ a {
 }
 .focus .gallery img,
 .focus .gallery video {
+  max-height: 100%;
   max-width: 100%;
 }
 #ios .gallery,
