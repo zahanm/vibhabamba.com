@@ -21,7 +21,7 @@ function reLayout() {
   var pages = document.querySelectorAll('.page');
 
   var to_show = document.getElementById(document.location.hash.substring(1));
-  if (to_show === null) {
+  if (to_show == null) {
     to_show = root;
   }
 
