@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', startup);
 function startup(): void {
   reLayout();
   window.addEventListener('hashchange', reLayout);
+  var g = new Gallery();
+  g.setupListener();
 }
 
 function reLayout(): void {
@@ -27,4 +29,19 @@ function reLayout(): void {
   // show the active one
   to_show.style.display = '';
   window.scroll(0, 0);
+}
+
+class Gallery {
+  test: HTMLElement;
+  constructor() {
+    this.test = document.querySelector('#android .gallery img');
+  }
+  setupListener(): void {
+    this.test.addEventListener('click', () => {
+      this.fade();
+    });
+  }
+  fade(): void {
+    this.test.style.opacity = '0';
+  }
 }

@@ -154,6 +154,10 @@ a {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
+#android .gallery img {
+  -webkit-transition: opacity 2s;
+          transition: opacity 2s;
+}
 .preload {
   display: none;
 }
