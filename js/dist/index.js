@@ -39,7 +39,7 @@ var Gallery = (function () {
   function Gallery() {
     _classCallCheck(this, Gallery);
 
-    this.test = document.querySelector('#android .gallery img');
+    this.images = Array.prototype.slice.call(document.querySelectorAll('#android .gallery img'));
   }
 
   _createClass(Gallery, [{
@@ -47,14 +47,15 @@ var Gallery = (function () {
     value: function setupListener() {
       var _this = this;
 
-      this.test.addEventListener('click', function () {
+      this.images[0].addEventListener('click', function () {
         _this.fade();
       });
     }
   }, {
     key: 'fade',
     value: function fade() {
-      this.test.style.opacity = '0';
+      this.images[0].style.opacity = '0';
+      this.images[1].style.opacity = '1';
     }
   }]);
 

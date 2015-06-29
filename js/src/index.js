@@ -32,16 +32,19 @@ function reLayout(): void {
 }
 
 class Gallery {
-  test: HTMLElement;
+  images: Array<HTMLElement>;
   constructor() {
-    this.test = document.querySelector('#android .gallery img');
+    this.images = Array.prototype.slice.call(
+      document.querySelectorAll('#android .gallery img')
+    );
   }
   setupListener(): void {
-    this.test.addEventListener('click', () => {
+    this.images[0].addEventListener('click', () => {
       this.fade();
     });
   }
   fade(): void {
-    this.test.style.opacity = '0';
+    this.images[0].style.opacity = '0';
+    this.images[1].style.opacity = '1';
   }
 }
