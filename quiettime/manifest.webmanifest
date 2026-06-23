@@ -1,0 +1,9 @@
+{
+  "name": "Quiet Time",
+  "short_name": "Quiet Time",
+  "start_url": "/quiettime/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": []
+}
