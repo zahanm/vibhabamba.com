@@ -80,7 +80,7 @@ button {
 .secondary { background: var(--soft); color: #4a4a4f; flex: .8; }
 
 .finished .ring {
-  stroke: #d8d0b8;
+  stroke: none;
   filter: drop-shadow(0 0 16px rgba(210, 190, 120, .55));
 }
 .finished .clock {
