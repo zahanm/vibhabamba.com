@@ -48,7 +48,7 @@ body {
 
 .fluid {
   fill: url(#fluidGradient);
-  stroke: #020203;
+  stroke: none;
   stroke-width: 1.2;
 }
 
