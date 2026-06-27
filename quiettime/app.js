@@ -1,80 +1,146 @@
-const DURATION_MS = 30 * 60 * 1000;
+let DURATION_MS = 30 * 60 * 1000;
+
+const DURATIONS = [
+  { label: '30 sec', ms: 30 * 1000 },
+  { label: '1 min', ms: 60 * 1000 },
+  { label: '5 min', ms: 5 * 60 * 1000 },
+  { label: '30 min', ms: 30 * 60 * 1000 },
+];
+
 const fluid = document.getElementById('fluid');
 const shine = document.getElementById('shine');
 const startBtn = document.getElementById('startBtn');
 const resetBtn = document.getElementById('resetBtn');
+const clock = document.querySelector('.clock');
 
 let startTime = null;
 let elapsedBeforePause = 0;
 let running = false;
 let raf = null;
+let devMenu = null;
+let pressTimer = null;
 
-function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
+function clamp(n, min, max) {
+  return Math.max(min, Math.min(max, n));
+}
 
 function fluidPath(progress, t) {
-  // progress: 1 full, 0 empty. Shape wanes from right to left, with a soft drifting edge.
-  const left = 24;
-  const right = 276;
-  const top = 24;
-  const bottom = 276;
-  const width = right - left;
-  const xEdge = left + width * progress;
+  const cx = 150;
+  const cy = 150;
+  const baseR = 126;
 
   if (progress <= 0.004) return '';
-  if (progress >= 0.995) {
-    return `M150,24 C220,24 276,80 276,150 C276,220 220,276 150,276 C80,276 24,220 24,150 C24,80 80,24 150,24 Z`;
+
+  const breathe = 1 + Math.sin(t * 0.00035) * 0.012;
+  const phase = t * 0.00045;
+
+  // Full moon: no outer gray stroke needed; just a living black shape.
+  if (progress >= 0.985) {
+    let d = '';
+    const steps = 64;
+
+    for (let i = 0; i <= steps; i++) {
+      const a = (Math.PI * 2 * i) / steps;
+      const drift =
+        Math.sin(a * 3 + phase) * 2.8 +
+        Math.sin(a * 5 - phase * 0.7) * 1.8 +
+        Math.sin(a * 7 + phase * 0.35) * 1.2;
+
+      const r = (baseR + drift) * breathe;
+      const x = cx + Math.cos(a) * r;
+      const y = cy + Math.sin(a) * r;
+
+      d += i === 0 ? `M ${x},${y}` : ` L ${x},${y}`;
+    }
+
+    return d + ' Z';
   }
 
-  const amp = 7 + 4 * Math.sin(t * 0.00045);
-  const phase = t * 0.0011;
-  const y1 = 38;
-  const y2 = 262;
+  // Waning moon: right edge slowly eats into the black moon.
+  const reveal = 1 - progress;
+  const cutX = cx + baseR - reveal * baseR * 2.15;
 
-  // Wavy right boundary: rounded ferrofluid drift, intentionally slow and soft.
   const points = [];
-  const steps = 9;
+  const steps = 44;
+
   for (let i = 0; i <= steps; i++) {
-    const p = i / steps;
-    const y = y1 + (y2 - y1) * p;
-    const wave = Math.sin(p * Math.PI * 5 + phase) * amp + Math.sin(p * Math.PI * 2.5 - phase * .7) * amp * .5;
-    const curveBias = Math.sin((p - .5) * Math.PI) * 16;
-    points.push([xEdge + wave + curveBias, y]);
+    const a = Math.PI / 2 + (Math.PI * i) / steps;
+    const drift =
+      Math.sin(a * 3 + phase) * 3.2 +
+      Math.sin(a * 6 - phase * 0.9) * 2.0 +
+      Math.sin(a * 9 + phase * 0.4) * 1.1;
+
+    const r = (baseR + drift) * breathe;
+    points.push([
+      cx + Math.cos(a) * r,
+      cy + Math.sin(a) * r
+    ]);
   }
 
-  let d = `M ${left},${top}`;
-  d += ` C ${left},${top} ${xEdge},${top - 6} ${points[0][0]},${points[0][1]}`;
-  for (let i = 1; i < points.length; i++) {
-    const [x, y] = points[i];
-    const [px, py] = points[i - 1];
-    const cx = (px + x) / 2;
-    const cy = (py + y) / 2;
-    d += ` Q ${px},${py} ${cx},${cy}`;
+  const topY = cy - baseR + 16;
+  const bottomY = cy + baseR - 16;
+  const edgePoints = [];
+  const edgeSteps = 12;
+
+  for (let i = 0; i <= edgeSteps; i++) {
+    const p = i / edgeSteps;
+    const y = topY + (bottomY - topY) * p;
+
+    const softBulge =
+      Math.sin(p * Math.PI) * 28 * progress +
+      Math.sin(p * Math.PI * 5 + phase * 2.2) * 7 +
+      Math.sin(p * Math.PI * 3 - phase * 1.4) * 5;
+
+    edgePoints.push([
+      cutX + softBulge,
+      y
+    ]);
   }
-  d += ` C ${xEdge},${bottom + 5} ${left},${bottom} ${left},${bottom}`;
-  d += ` C ${8},${220} ${8},${80} ${left},${top} Z`;
-  return d;
+
+  let d = `M ${points[0][0]},${points[0][1]}`;
+
+  for (let i = 1; i < points.length; i++) {
+    d += ` L ${points[i][0]},${points[i][1]}`;
+  }
+
+  for (let i = edgePoints.length - 1; i >= 0; i--) {
+    d += ` L ${edgePoints[i][0]},${edgePoints[i][1]}`;
+  }
+
+  return d + ' Z';
+}
+
+function currentElapsed(now) {
+  return running ? elapsedBeforePause + (now - startTime) : elapsedBeforePause;
 }
 
 function currentProgress(now) {
-  const elapsed = running ? elapsedBeforePause + (now - startTime) : elapsedBeforePause;
-  return clamp(1 - elapsed / DURATION_MS, 0, 1);
+  return clamp(1 - currentElapsed(now) / DURATION_MS, 0, 1);
 }
 
 function draw(now = performance.now()) {
   const progress = currentProgress(now);
+
   fluid.setAttribute('d', fluidPath(progress, now));
-  shine.setAttribute('opacity', progress > .05 ? .55 : 0);
-  shine.setAttribute('cx', 70 + 90 * progress + Math.sin(now * 0.0008) * 3);
-  shine.setAttribute('cy', 68 + Math.cos(now * 0.0007) * 4);
+
+  // Minimal shine; set to 0 if you want pure matte black.
+  shine.setAttribute('opacity', progress > .05 ? .18 : 0);
+  shine.setAttribute('cx', 76 + 80 * progress + Math.sin(now * 0.00045) * 4);
+  shine.setAttribute('cy', 70 + Math.cos(now * 0.0004) * 5);
 
   document.body.classList.toggle('finished', progress <= 0);
-  startBtn.textContent = running ? 'Pause' : progress < 1 && progress > 0 ? 'Continue' : 'Start quiet time';
+
+  startBtn.textContent =
+    running ? 'Pause' :
+    progress < 1 && progress > 0 ? 'Continue' :
+    'Start quiet time';
 
   raf = requestAnimationFrame(draw);
 }
 
-startBtn.addEventListener('click', () => {
+function toggleTimer() {
   const now = performance.now();
+
   if (running) {
     elapsedBeforePause += now - startTime;
     running = false;
@@ -83,15 +149,84 @@ startBtn.addEventListener('click', () => {
     startTime = now;
     running = true;
   }
-});
+}
 
-resetBtn.addEventListener('click', () => {
+function resetTimer() {
   running = false;
   elapsedBeforePause = 0;
   startTime = null;
+}
+
+function setDuration(ms) {
+  DURATION_MS = ms;
+  resetTimer();
+  updateDevMenu();
+}
+
+function createDevMenu() {
+  devMenu = document.createElement('div');
+  devMenu.style.position = 'fixed';
+  devMenu.style.left = '50%';
+  devMenu.style.bottom = '24px';
+  devMenu.style.transform = 'translateX(-50%)';
+  devMenu.style.background = 'rgba(255,255,255,.94)';
+  devMenu.style.border = '1px solid rgba(0,0,0,.08)';
+  devMenu.style.boxShadow = '0 18px 50px rgba(0,0,0,.12)';
+  devMenu.style.borderRadius = '24px';
+  devMenu.style.padding = '14px';
+  devMenu.style.display = 'none';
+  devMenu.style.gap = '8px';
+  devMenu.style.zIndex = '999';
+  devMenu.style.fontFamily = 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif';
+
+  document.body.appendChild(devMenu);
+  updateDevMenu();
+}
+
+function updateDevMenu() {
+  if (!devMenu) return;
+
+  devMenu.innerHTML = '';
+
+  DURATIONS.forEach(duration => {
+    const button = document.createElement('button');
+    button.textContent = duration.label;
+    button.style.border = '0';
+    button.style.borderRadius = '999px';
+    button.style.padding = '10px 14px';
+    button.style.fontSize = '14px';
+    button.style.background = duration.ms === DURATION_MS ? '#000' : '#f1f1f1';
+    button.style.color = duration.ms === DURATION_MS ? '#fff' : '#111';
+
+    button.addEventListener('click', event => {
+      event.stopPropagation();
+      setDuration(duration.ms);
+    });
+
+    devMenu.appendChild(button);
+  });
+}
+
+function showDevMenu() {
+  if (!devMenu) createDevMenu();
+  devMenu.style.display = devMenu.style.display === 'none' ? 'flex' : 'none';
+}
+
+startBtn.addEventListener('click', toggleTimer);
+resetBtn.addEventListener('click', resetTimer);
+
+clock.addEventListener('click', () => startBtn.click());
+
+clock.addEventListener('pointerdown', () => {
+  pressTimer = setTimeout(showDevMenu, 3000);
 });
 
-// Tap the clock to start/pause, useful for a phone home-screen app.
-document.querySelector('.clock').addEventListener('click', () => startBtn.click());
+clock.addEventListener('pointerup', () => {
+  clearTimeout(pressTimer);
+});
+
+clock.addEventListener('pointerleave', () => {
+  clearTimeout(pressTimer);
+});
 
 draw();
