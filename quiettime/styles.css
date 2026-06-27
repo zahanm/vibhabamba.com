@@ -42,7 +42,7 @@ body {
 
 .ring {
   fill: none;
-  stroke: #b8b8bd;
+  stroke: none;
   stroke-width: 3.2;
 }
 
