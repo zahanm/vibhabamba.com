@@ -1,0 +1,217 @@
+body {
+  font-family: 'Georgia', serif;
+}
+a {
+  color: #27aae1;
+  text-decoration: none;
+}
+.page {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.headline {
+  margin-top: 60px;
+  margin-bottom: 8px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #aaa;
+  color: #333;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.mission {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 32px;
+  line-height: 40px;
+  font-family: 'Chronicle Display', 'Georgia', serif;
+  text-align: center;
+  width: 60%;
+}
+@media all and (max-width: 940px) {
+  .mission {
+    width: 70%;
+  }
+}
+@media all and (max-width: 450px) {
+  .mission {
+    width: 80%;
+  }
+}
+#home {
+  margin-top: 60px;
+}
+#home .headline {
+  color: grey;
+  font-size: 14px;
+  letter-spacing: 0.6em;
+  border-bottom: none;
+}
+.lead {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  font-size: 62px;
+  line-height: 68px;
+  text-align: center;
+  margin-top: 30px;
+}
+.tile-board {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.tile-board a {
+  color: black;
+}
+.tile {
+  width: 300px;
+  padding: 4px;
+}
+.tile img {
+  width: 100%;
+}
+.contact {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+.contact li {
+  padding: 15px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.contact li * {
+  padding: 0 2px;
+}
+.contact li img {
+  height: 18px;
+  opacity: 0.9;
+}
+.contact li a {
+  color: #666;
+}
+.focus .gallery {
+  margin-top: 30px;
+  max-height: 500px;
+  max-width: 80%;
+}
+.focus .gallery img,
+.focus .gallery video {
+  max-height: 500px;
+  max-width: 100%;
+}
+#ios .gallery,
+#android .gallery {
+  position: relative;
+}
+#ios .gallery img,
+#android .gallery img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: opacity 2s;
+          transition: opacity 2s;
+}
+#ios .gallery img:first-child,
+#android .gallery img:first-child {
+  position: relative;
+  opacity: 1;
+}
+.preload {
+  display: none;
+}
+.backout {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.backout:hover {
+  cursor: pointer;
+}
+.backout img {
+  width: 52px;
+}
+.details {
+  font-size: 16px;
+  line-height: 28px;
+  color: #555;
+}
+.tags {
+  margin-bottom: 80px;
+  margin-top: 3px;
+  color: #777;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 26px;
+}
+.store-icon {
+  width: 160px;
+  margin-top: 30px;
+}
+@media all and (max-width: 450px) {
+  .tile-board {
+    -webkit-flex-flow: column;
+            flex-flow: column;
+  }
+  .tile {
+    margin: 20px 0;
+  }
+  .lead {
+    line-height: 64px;
+  }
+  .contact {
+    -webkit-flex-flow: column;
+            flex-flow: column;
+  }
+}
+.para {
+  width: 60%;
+}
+@media all and (max-width: 940px) {
+  .para {
+    width: 70%;
+  }
+}
+@media all and (max-width: 450px) {
+  .para {
+    width: 80%;
+  }
+}
