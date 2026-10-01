@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect x="3" y="3" width="58" height="58" rx="15" fill="#fbfbfa" stroke="#111" stroke-width="2"/>
-  <path d="M18 18c4 11 8 23 14 31 6-8 10-20 14-31" fill="none" stroke="#111" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <style>
+    path { stroke: #111; }
+    @media (prefers-color-scheme: dark) { path { stroke: #fff; } }
+  </style>
+  <path d="M16 17c5 13 10 25 16 33 6-8 11-20 16-33" fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
